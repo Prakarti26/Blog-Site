@@ -1,6 +1,8 @@
 package com.prakarti.Blog.project.service;
 
 import com.prakarti.Blog.project.entity.Blog;
+import com.prakarti.Blog.project.model.CommonPaginationRequest;
+import com.prakarti.Blog.project.model.CreateBlogRequest;
 import com.prakarti.Blog.project.model.UpdateBlogRequest;
 
 import java.awt.print.Pageable;
@@ -11,13 +13,13 @@ public interface BlogService {
 
 
 
-    Blog createBlog(Blog blog);
-    Blog updateBlog(UpdateBlogRequest updateBlogRequest);
-    Blog deleteBlog(String blogId);
+    Blog createBlog(CreateBlogRequest createBlogRequest) throws Exception;
+    Blog updateBlog(UpdateBlogRequest updateBlogRequest)throws Exception;
+    Blog deleteBlog(String blogId)throws Exception;
 
-    Blog getBlogById(String blogId);
+    Blog getBlogById(String blogId)throws Exception;
 
-    List<Blog> getBlogsByUserId(String userId, Pageable pageable);
+    List<Blog> getBlogsByUserId(CommonPaginationRequest commonPaginationRequest)throws Exception;
 
 
 }
