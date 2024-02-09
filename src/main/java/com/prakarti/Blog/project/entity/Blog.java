@@ -1,4 +1,4 @@
-package com.prakarti.Blog.project.model;
+package com.prakarti.Blog.project.entity;
 
 import lombok.Data;
 import lombok.Getter;
@@ -22,7 +22,7 @@ public class Blog {
     private String title;
     private String description;
     private Boolean publish;
-    private ObjectId userId;
+    private String userId;
 
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;

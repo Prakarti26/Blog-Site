@@ -1,4 +1,4 @@
-package com.prakarti.Blog.project.jpa;
+package com.prakarti.Blog.project.repository;
 
 import com.prakarti.Blog.project.entity.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
