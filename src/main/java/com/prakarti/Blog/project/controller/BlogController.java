@@ -34,7 +34,7 @@ public class BlogController {
         try{
             Blog CreateBlogRequest = blogService.createBlog(createBlogRequest);
             DBResponseEntity dbResponseEntity = DBResponseEntity.builder()
-                                                .data(createBlogRequest)
+                                                .data(CreateBlogRequest)
                                                 .message("Blog Created Successfully")
                                                 .build();
             log.info("Blog created Successfully: {} , createdBlog");

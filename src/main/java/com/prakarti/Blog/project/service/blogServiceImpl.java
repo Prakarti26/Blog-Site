@@ -26,14 +26,12 @@ public class blogServiceImpl implements BlogService{
 
         Blog blog = Blog.builder()
                 .title(createBlogRequest.getTitle())
-                .publish(createBlogRequest.getPublish())
-                .description(createBlogRequest.getDescription())
                 .userId(createBlogRequest.getUserId())
+                .description(createBlogRequest.getDescription())
+                .publish(createBlogRequest.getPublish())
                 .build();
-
         blog.setCreatedAt(LocalDateTime.now());
         blog.setUpdatedAt(LocalDateTime.now());
-
         return blogRepository.save(blog);
 
     }
