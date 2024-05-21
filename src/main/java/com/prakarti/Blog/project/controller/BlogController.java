@@ -52,13 +52,13 @@ public class BlogController {
         try{
             Blog updatedBlog = blogService.updateBlog(updateBlogRequest);
             if(ObjectUtils.isEmpty((updatedBlog))){
-                throw new RecordNotFoundException("NOT_FOUND","Blog with given ID is not Found");
+                throw new RecordNotFoundException("Blog with given ID is not Found","NOT_FOUND");
             }
             DBResponseEntity dbResponseEntity = DBResponseEntity.builder()
-                    .data(updatedBlog)
-                    .message("Blog Updated Successfully")
-                    .build();
-            log.info("Blog is Updated Successfully: {}",updateBlogRequest.toString());
+                                                                .data(updatedBlog)
+                                                                .message("Blog Updated Successfully")
+                                                                .build();
+            log.info("Blog is Updated Successfully: {}",updatedBlog);
             return ResponseEntity.ok(dbResponseEntity);
         }catch (RecordNotFoundException e){
             log.debug("BlogController:updateBlogCall something when wrong : {}", e);
@@ -75,7 +75,7 @@ public class BlogController {
         try{
             Blog blog = blogService.getBlogById(blogId);
             if(ObjectUtils.isEmpty((blog))){
-                throw new RecordNotFoundException("NOT_FOUND","Blog with given ID is not Found");
+                throw new RecordNotFoundException("Blog with given ID is not Found","NOT_FOUND");
             }
             DBResponseEntity dbResponseEntity = DBResponseEntity.builder()
                                                 .data(blog)
@@ -96,7 +96,7 @@ public class BlogController {
         try{
             Blog blog = blogService.deleteBlog(blogId);
             if(ObjectUtils.isEmpty((blog))){
-                throw new RecordNotFoundException("NOT_FOUND","Blog with given ID is not Found");
+                throw new RecordNotFoundException("Blog with given ID is not Found","NOT_FOUND");
             }
             DBResponseEntity dbResponseEntity = DBResponseEntity.builder()
                                                 .data(blog)

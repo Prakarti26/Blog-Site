@@ -1,16 +1,17 @@
 package com.prakarti.Blog.project.entity;
 
 import lombok.*;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
 @Document
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class Blog {
     @Id
     private String blogId;

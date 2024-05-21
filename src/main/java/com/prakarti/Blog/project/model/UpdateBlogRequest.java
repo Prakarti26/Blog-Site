@@ -10,21 +10,18 @@ import lombok.NoArgsConstructor;
 
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Builder
 public class UpdateBlogRequest {
-    @NotBlank(message = "blogId is required parameter.")
+    @NotBlank(message = "Blog Id cannot be blank")
     private String blogId;
-    @NotBlank(message = "Title is required parameter.")
-    private String title;
-    @NotBlank(message = "Description is required parameter.")
-    private String description;
-
-    @NotNull(message = "Publish is required parameter.")
-    private Boolean publish;
-    @NotBlank(message = "UserId is required parameter.")
+    @NotBlank(message = "User Id cannot be blank")
     private String userId;
-
+    @NotBlank(message = "Title cannot be blank")
+    private String title;
+    @NotBlank(message = "Description cannot be blank")
+    private String description;
+    @NotNull(message = "Publish cannot be blank")
+    private Boolean publish;
 }
-
